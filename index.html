@@ -3,123 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saddam Coin Bajar - Expert Database</title>
+    <title>Saddam Coin Bajar - Trusted Expert</title>
     <style>
-        :root { --gold: #cca43b; --dark: #1a1a1a; }
-        body { font-family: 'Segoe UI', sans-serif; margin: 0; background: #f9f9f9; text-align: center; }
-        
-        /* Header & Branding */
-        header { background: var(--dark); color: var(--gold); padding: 40px 10px; border-bottom: 5px solid var(--gold); }
-        header h1 { margin: 0; font-size: 2.2rem; text-transform: uppercase; }
-        
-        /* Daughter's Photo Branding */
-        .profile-container { margin-top: -60px; position: relative; z-index: 10; }
-        .daughter-img { 
-            width: 130px; height: 130px; border-radius: 50%; 
-            border: 6px solid #fff; box-shadow: 0 4px 15px rgba(0,0,0,0.2); 
-            object-fit: cover; background: #fff;
-        }
-        .dedication { font-style: italic; color: #555; margin-top: 10px; font-weight: 500; }
-
-        /* Search Box */
+        :root { --gold: #cca43b; --dark: #1a1a1a; --green: #25d366; }
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; background: #f4f4f4; text-align: center; color: #333; }
+        header { background: var(--dark); color: var(--gold); padding: 50px 10px; border-bottom: 5px solid var(--gold); }
+        .profile-container { margin-top: -65px; position: relative; z-index: 10; }
+        .daughter-img { width: 130px; height: 130px; border-radius: 50%; border: 6px solid #fff; box-shadow: 0 4px 15px rgba(0,0,0,0.2); object-fit: cover; }
         .search-section { padding: 30px 15px; }
-        #search { 
-            width: 90%; max-width: 550px; padding: 18px 25px; 
-            border-radius: 40px; border: 2px solid #ddd; 
-            font-size: 17px; outline: none; transition: 0.3s;
-        }
-        #search:focus { border-color: var(--gold); box-shadow: 0 0 12px rgba(204,164,59,0.3); }
-
-        /* Coin Results */
-        #results { 
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-            gap: 20px; padding: 20px; max-width: 1200px; margin: 0 auto; 
-        }
-        .coin-card { 
-            background: #fff; border-radius: 15px; padding: 25px; 
-            box-shadow: 0 8px 20px rgba(0,0,0,0.06); border-bottom: 5px solid #eee; 
-            transition: 0.3s; text-align: left;
-        }
-        .coin-card:hover { transform: translateY(-5px); }
-        .rare-label { 
-            background: #d32f2f; color: white; padding: 4px 12px; 
-            border-radius: 4px; font-size: 11px; font-weight: bold; float: right;
-        }
-        .value-text { font-size: 20px; color: #2e7d32; font-weight: 700; margin: 15px 0; }
-        
-        /* Action Button */
-        .btn-wa { 
-            display: block; background: #25d366; color: white; text-align: center; 
-            padding: 12px; text-decoration: none; border-radius: 10px; font-weight: bold;
-        }
-
-        footer { background: var(--dark); color: #ccc; padding: 40px 20px; margin-top: 60px; font-size: 14px; }
-        .footer-brand { color: var(--gold); font-size: 18px; font-weight: bold; margin-bottom: 10px; }
+        #search { width: 90%; max-width: 500px; padding: 15px 25px; border-radius: 30px; border: 2px solid #ddd; font-size: 16px; }
+        #results { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; padding: 20px; max-width: 1100px; margin: 0 auto; }
+        .coin-card { background: #fff; border-radius: 15px; padding: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); text-align: left; }
+        .rare-badge { background: #d32f2f; color: #fff; padding: 3px 10px; border-radius: 5px; font-size: 12px; font-weight: bold; float: right; }
+        .coin-img { width: 100%; height: 160px; object-fit: contain; background: #f9f9f9; border-radius: 10px; margin-bottom: 10px; }
+        .price { font-size: 20px; color: #2e7d32; font-weight: bold; margin: 10px 0; }
+        .btn-wa { display: block; background: var(--green); color: #fff; text-align: center; padding: 12px; text-decoration: none; border-radius: 8px; font-weight: bold; }
+        footer { background: var(--dark); color: #888; padding: 30px; margin-top: 50px; font-size: 13px; }
     </style>
 </head>
 <body>
 
 <header>
     <h1>SADDAM COIN BAJAR</h1>
-    <p>Professional Numismatics Expert</p>
+    <p>Numismatics Expert & Digital Creator</p>
 </header>
 
 <div class="profile-container">
-    <!-- Aapki beti ki photo 1000076252.jpg yahan load hogi -->
-    <img src="1000076252.jpg" alt="Aliya" class="daughter-img">
-    <div class="dedication">"Meri beti, meri sabse badi prerna"</div>
+    <img src="1000076252.jpg" alt="Saddam's Daughter" class="daughter-img">
+    <p style="font-style: italic; color: #666; margin-top: 10px;">"Meri beti, meri prerna"</p>
 </div>
 
 <div class="search-section">
-    <input type="text" id="search" onkeyup="renderCoins()" placeholder="Sikka ya Mint search karein (e.g. 1985 H)...">
+    <input type="text" id="search" onkeyup="render()" placeholder="Sikka search karein (e.g. 1985 H, Vaishno Devi)...">
+    <p style="font-size: 12px; color: #888; margin-top: 10px;">Login ki zarurat nahi hai. Seedha search karein.</p>
 </div>
 
 <div id="results"></div>
 
 <footer>
-    <div class="footer-brand">SADDAM MD SADDAM</div>
-    <p>Digital Creator | Graphic Designer | Professional Translator</p>
-    <p>Bihar (Bhagalpur & Banka) Regional Database</p>
-    <p style="margin-top: 20px; opacity: 0.6;">© 2026 Part of "ONLINE KAMAI KI MASTER GUIDE" Project</p>
+    <b style="color:var(--gold)">SADDAM MD SADDAM</b><br>
+    Bihar (Bhagalpur & Banka) Regional Database<br>
+    © 2026 "ONLINE KAMAI KI MASTER GUIDE" Project
 </footer>
 
 <script>
-// Aapka 50x bada data yahan add karein
 const coins = [
-    { name: "1 Rupee 1991", val: "₹300 - ₹2,000", rare: true, mint: "Noida" },
-    { name: "5 Rupee 1992", val: "₹800 - ₹5,000", rare: true, mint: "Mumbai" },
-    { name: "1 Rupee 1985 (H Mark)", val: "₹500 - ₹2,500", rare: true, mint: "Heaton Press" },
-    { name: "2 Rupee 1995", val: "₹500 - ₹3,000", rare: true, mint: "Kolkata" },
-    { name: "10 Rupee 2005", val: "₹200 - ₹800", rare: false, mint: "Noida" },
-    { name: "1 Rupee 1982", val: "₹400 - ₹1,200", rare: false, mint: "Mumbai" }
+    { name: "1 Rupee 1985 (H Mark)", val: "₹500 - ₹2,500", rare: true, mint: "Heaton Press", img: "1985h.jpg" },
+    { name: "5 Rupee (Vaishno Devi)", val: "₹500 - ₹2,000", rare: false, mint: "Multiple", img: "vaishno.jpg" },
+    { name: "2 Rupee (National Integration)", val: "₹500 - ₹1,500", rare: true, mint: "Kolkata", img: "ni2.jpg" },
+    { name: "1 Rupee 1982 (Small)", val: "₹1,000 - ₹5,000", rare: true, mint: "Mumbai", img: "1982s.jpg" },
+    { name: "25 Paise (Rhino)", val: "₹300 - ₹1,200", rare: false, mint: "Any Mint", img: "rhino.jpg" },
+    { name: "1 Rupee 1970", val: "₹2,000 - ₹8,000", rare: true, mint: "Mumbai", img: "1970.jpg" }
 ];
 
-function renderCoins() {
+function render() {
     const q = document.getElementById("search").value.toLowerCase();
     const container = document.getElementById("results");
     let html = "";
-    
-    const filtered = coins.filter(c => c.name.toLowerCase().includes(q) || c.mint.toLowerCase().includes(q));
+    const filtered = coins.filter(c => c.name.toLowerCase().includes(q));
 
     if (q === "") {
-        html = "<p style='grid-column: 1/-1;'>App apni coin ka saal ya naam likh kar search karein.</p>";
-    } else if (filtered.length === 0) {
-        html = "<p style='grid-column: 1/-1;'>Maaf kijiye, ye sikka hamare database mein nahi hai.</p>";
+        html = "<p style='grid-column: 1/-1;'>Bhagalpur aur Banka ke sabse bade database mein search karein.</p>";
     } else {
         filtered.forEach(c => {
+            const msg = encodeURIComponent(`Hello Saddam Bhai, maine aapki site par ${c.name} dekha hai. Mujhe ye sell karna hai.`);
             html += `
-                <div class="coin-card" style="border-bottom-color: ${c.rare ? '#d32f2f' : '#eee'}">
-                    ${c.rare ? '<span class="rare-label">RARE</span>' : ''}
-                    <h3 style="margin:0;">${c.name}</h3>
+                <div class="coin-card">
+                    ${c.rare ? '<span class="rare-badge">RARE</span>' : ''}
+                    <img src="${c.img}" class="coin-img" onerror="this.src='https://via.placeholder.com/150?text=No+Photo'">
+                    <h3 style="margin:5px 0;">${c.name}</h3>
                     <small>Mint: ${c.mint}</small>
-                    <div class="value-text">Est. Value: ${c.val}</div>
-                    <a href="https://wa.me/YOURNUMBER" class="btn-wa">WhatsApp par sampark karein</a>
+                    <div class="price">Kimat: ${c.val}</div>
+                    <a href="https://wa.me/91YOURNUMBER?text=${msg}" class="btn-wa">WhatsApp par Sampark Karein</a>
                 </div>`;
         });
     }
     container.innerHTML = html;
 }
-renderCoins();
+render();
 </script>
 
 </body>
